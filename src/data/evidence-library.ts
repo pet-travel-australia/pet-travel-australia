@@ -15,7 +15,7 @@ export const evidenceLibrary: EvidenceEntry[] = [
   {
     id: "ev-2",
     title: "Qantas — travelling with pets",
-    summary: "Cabin pet policy: small pets under 8kg including carrier, approved carriers only, limited spots per flight.",
+    summary: "Confirms no standard pet carriage in cabin or as checked baggage on Qantas domestic services; pets can only travel via Qantas Freight.",
     sourceOrganisation: "Qantas",
     sourceUrl: "https://www.qantas.com/au/en/travel-info/traveller-needs/pets.html",
     dateChecked: "2026-02-01",
@@ -26,7 +26,7 @@ export const evidenceLibrary: EvidenceEntry[] = [
   {
     id: "ev-3",
     title: "Virgin Australia — assistance animals and pets",
-    summary: "Confirms no standard pet carriage in cabin or hold on Virgin Australia domestic services.",
+    summary: "Cabin pet policy: small pets under 8kg including carrier, approved carriers only, limited spots per flight.",
     sourceOrganisation: "Virgin Australia",
     sourceUrl: "https://www.virginaustralia.com/au/en/travel-info/traveller-info/assistance-animals/",
     dateChecked: "2026-01-28",
