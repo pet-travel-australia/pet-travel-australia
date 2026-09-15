@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { sampleStories, storyCategoryLabels } from "@/data/stories";
@@ -56,6 +57,28 @@ export function StoriesClient() {
       </div>
 
       <div className="mt-8 columns-1 gap-5 sm:columns-2 lg:columns-3 [&>*]:mb-5 [&>*]:break-inside-avoid">
+        {filter === "all" && (
+          <>
+            <div className="relative aspect-[3/4] overflow-hidden rounded-2xl shadow-card">
+              <Image
+                src="/images/cat-beach.jpg"
+                alt="A cat on a sandy beach with people walking in the background"
+                fill
+                sizes="(min-width: 1024px) 30vw, 90vw"
+                className="object-cover"
+              />
+            </div>
+            <div className="relative aspect-square overflow-hidden rounded-2xl shadow-card">
+              <Image
+                src="/images/puppy-beach.jpg"
+                alt="A puppy sitting on a beach looking up at its owner"
+                fill
+                sizes="(min-width: 1024px) 30vw, 90vw"
+                className="object-cover"
+              />
+            </div>
+          </>
+        )}
         {visible.map((story) => (
           <article key={story.id} className="card p-6">
             <span className="badge badge-demo">Illustrative placeholder</span>

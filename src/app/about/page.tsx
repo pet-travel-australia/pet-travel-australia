@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   BookOpenCheck,
@@ -31,22 +32,44 @@ const principles = [
 export default function AboutPage() {
   return (
     <div className="section py-12 sm:py-16">
-      <div className="max-w-2xl">
-        <p className="label-eyebrow">About</p>
-        <h1 className="mt-3 font-display text-3xl font-semibold tracking-tight text-ink-950 sm:text-4xl">
-          Responsible access, not unrestricted access
-        </h1>
-        <p className="mt-4 text-base leading-relaxed text-ink-900/65">
-          Pet Travel Australia is an independent civic-tech and consumer-data platform. We
-          advocate for practical, responsible pet-inclusive transport — not for pets to go
-          everywhere, unconditionally, regardless of size, behaviour or context.
-        </p>
-        <p className="mt-4 text-base leading-relaxed text-ink-900/65">
-          Australians love and spend heavily on their pets, but transport infrastructure
-          frequently assumes pet owners have private cars. We make the barriers visible, quantify
-          unmet demand, identify workable solutions, and give transport providers and governments
-          the evidence to make change.
-        </p>
+      <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-14">
+        <div className="max-w-2xl">
+          <p className="label-eyebrow">About</p>
+          <h1 className="mt-3 font-display text-3xl font-semibold tracking-tight text-ink-950 sm:text-4xl">
+            Responsible access, not unrestricted access
+          </h1>
+          <p className="mt-4 text-base leading-relaxed text-ink-900/65">
+            Pet Travel Australia is an independent civic-tech and consumer-data platform. We
+            advocate for practical, responsible pet-inclusive transport — not for pets to go
+            everywhere, unconditionally, regardless of size, behaviour or context.
+          </p>
+          <p className="mt-4 text-base leading-relaxed text-ink-900/65">
+            Australians love and spend heavily on their pets, but transport infrastructure
+            frequently assumes pet owners have private cars. We make the barriers visible, quantify
+            unmet demand, identify workable solutions, and give transport providers and governments
+            the evidence to make change.
+          </p>
+        </div>
+        <div className="grid grid-cols-2 gap-4">
+          <div className="relative mt-8 aspect-[3/4] overflow-hidden rounded-2xl shadow-card">
+            <Image
+              src="/images/golden-retriever-street.jpg"
+              alt="A golden retriever resting on a city footpath"
+              fill
+              sizes="(min-width: 1024px) 20vw, 45vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="relative aspect-[3/4] overflow-hidden rounded-2xl shadow-card">
+            <Image
+              src="/images/ginger-cat-canal.jpg"
+              alt="A ginger and white cat sitting on a brick walkway beside a canal"
+              fill
+              sizes="(min-width: 1024px) 20vw, 45vw"
+              className="object-cover"
+            />
+          </div>
+        </div>
       </div>
 
       <section className="mt-14">

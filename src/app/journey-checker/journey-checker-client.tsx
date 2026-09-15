@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Search, TriangleAlert } from "lucide-react";
 import { cities } from "@/data/cities";
@@ -43,15 +44,26 @@ export function JourneyCheckerClient() {
 
   return (
     <div className="section py-12 sm:py-16">
-      <div className="max-w-2xl">
-        <p className="label-eyebrow">Journey Checker</p>
-        <h1 className="mt-3 font-display text-3xl font-semibold tracking-tight text-ink-950 sm:text-4xl">
-          Where can you actually go together?
-        </h1>
-        <p className="mt-4 text-base leading-relaxed text-ink-900/65">
-          Search a route to see every transport option we track, whether pets are permitted,
-          restricted or excluded, and what it would cost and require.
-        </p>
+      <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+        <div className="max-w-2xl">
+          <p className="label-eyebrow">Journey Checker</p>
+          <h1 className="mt-3 font-display text-3xl font-semibold tracking-tight text-ink-950 sm:text-4xl">
+            Where can you actually go together?
+          </h1>
+          <p className="mt-4 text-base leading-relaxed text-ink-900/65">
+            Search a route to see every transport option we track, whether pets are permitted,
+            restricted or excluded, and what it would cost and require.
+          </p>
+        </div>
+        <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-card">
+          <Image
+            src="/images/terrier-train-window.jpg"
+            alt="A small terrier sitting beside its owner, looking out a train window"
+            fill
+            sizes="(min-width: 1024px) 30vw, 90vw"
+            className="object-cover"
+          />
+        </div>
       </div>
 
       <DemoDataNotice className="mt-8">

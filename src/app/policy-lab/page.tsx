@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Armchair, Box, Clock, FlaskConical, Link2, Receipt, ShieldCheck } from "lucide-react";
 import { assistanceAnimalNote, policyModels } from "@/data/policy-models";
 import { PolicyModel } from "@/data/types";
@@ -32,16 +33,30 @@ const chipColors: Record<PolicyModel["icon"], string> = {
 export default function PolicyLabPage() {
   return (
     <div className="section py-12 sm:py-16">
-      <div className="max-w-2xl">
-        <p className="label-eyebrow">Policy Lab</p>
-        <h1 className="mt-3 font-display text-3xl font-semibold tracking-tight text-ink-950 sm:text-4xl">
-          What could actually work?
-        </h1>
-        <p className="mt-4 text-base leading-relaxed text-ink-900/65">
-          We don&rsquo;t advocate for unrestricted pet access. We advocate for practical,
-          proportionate models that already work somewhere — matched to the animal, the route and
-          the time of day.
-        </p>
+      <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+        <div className="max-w-2xl">
+          <p className="label-eyebrow">Policy Lab</p>
+          <h1 className="mt-3 font-display text-3xl font-semibold tracking-tight text-ink-950 sm:text-4xl">
+            What could actually work?
+          </h1>
+          <p className="mt-4 text-base leading-relaxed text-ink-900/65">
+            We don&rsquo;t advocate for unrestricted pet access. We advocate for practical,
+            proportionate models that already work somewhere — matched to the animal, the route and
+            the time of day.
+          </p>
+        </div>
+        <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-card">
+          <Image
+            src="/images/puppy-carrier-backpack.jpg"
+            alt="A small puppy peeking out of an open travel carrier"
+            fill
+            sizes="(min-width: 1024px) 30vw, 90vw"
+            className="object-cover"
+          />
+          <span className="absolute bottom-3 left-3 rounded-full bg-ink-950/80 px-3 py-1 text-xs font-medium text-white backdrop-blur">
+            Small pets, carrier-based
+          </span>
+        </div>
       </div>
 
       <div className="mt-10 grid gap-5 lg:grid-cols-2">

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { TrendingUp } from "lucide-react";
 import { CommercialCalculator } from "./commercial-calculator";
 import { DemoDataNotice } from "@/components/demo-banner";
@@ -20,16 +21,27 @@ const dataPublishingPoints = [
 export default function CommercialCasePage() {
   return (
     <div className="section py-12 sm:py-16">
-      <div className="max-w-2xl">
-        <p className="label-eyebrow">Commercial Case</p>
-        <h1 className="mt-3 font-display text-3xl font-semibold tracking-tight text-ink-950 sm:text-4xl">
-          The opportunity operators are leaving on the table
-        </h1>
-        <p className="mt-4 text-base leading-relaxed text-ink-900/65">
-          Excluding pets isn&rsquo;t neutral — it&rsquo;s a foregone revenue line and a real
-          reason some travellers choose a competitor, drive instead, or don&rsquo;t travel at
-          all. This calculator makes that opportunity concrete.
-        </p>
+      <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+        <div className="max-w-2xl">
+          <p className="label-eyebrow">Commercial Case</p>
+          <h1 className="mt-3 font-display text-3xl font-semibold tracking-tight text-ink-950 sm:text-4xl">
+            The opportunity operators are leaving on the table
+          </h1>
+          <p className="mt-4 text-base leading-relaxed text-ink-900/65">
+            Excluding pets isn&rsquo;t neutral — it&rsquo;s a foregone revenue line and a real
+            reason some travellers choose a competitor, drive instead, or don&rsquo;t travel at
+            all. This calculator makes that opportunity concrete.
+          </p>
+        </div>
+        <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-ink-950 shadow-card">
+          <Image
+            src="/images/cat-plane-window.jpg"
+            alt="A cat's silhouette against an aeroplane window, looking out at the wing"
+            fill
+            sizes="(min-width: 1024px) 30vw, 90vw"
+            className="object-cover"
+          />
+        </div>
       </div>
 
       <DemoDataNotice className="mt-8 max-w-2xl">

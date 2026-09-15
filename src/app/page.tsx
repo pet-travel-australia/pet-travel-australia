@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowUpRight,
@@ -124,6 +125,23 @@ export default function HomePage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="relative h-[340px] w-full overflow-hidden sm:h-[420px]">
+        <Image
+          src="/images/dogs-on-train.jpg"
+          alt="Two leashed dogs in winter coats standing calmly on a metro train"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[center_62%]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink-950/85 via-ink-950/10 to-transparent" />
+        <div className="section absolute inset-x-0 bottom-0 pb-8 sm:pb-10">
+          <p className="max-w-md font-display text-xl italic leading-snug text-white sm:text-2xl">
+            &ldquo;This is what it already looks like, where the rules allow it.&rdquo;
+          </p>
         </div>
       </section>
 
