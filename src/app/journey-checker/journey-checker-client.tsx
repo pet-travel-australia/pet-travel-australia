@@ -141,11 +141,11 @@ export function JourneyCheckerClient() {
           </div>
 
           {!practical && (
-            <div className="card mt-5 flex flex-col gap-4 border-clay-500/30 bg-clay-500/[0.04] p-6 sm:flex-row sm:items-center sm:justify-between">
+            <div className="card mt-5 flex flex-col gap-4 border-coral-500/30 bg-coral-500/[0.05] p-6 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex gap-3">
-                <TriangleAlert className="h-5 w-5 shrink-0 text-clay-600" aria-hidden />
+                <TriangleAlert className="h-5 w-5 shrink-0 text-coral-600" aria-hidden />
                 <div>
-                  <p className="font-display text-lg font-semibold text-clay-600">Mobility gap identified</p>
+                  <p className="font-display text-lg font-semibold text-coral-600">Mobility gap identified</p>
                   <p className="mt-1 max-w-xl text-sm leading-relaxed text-ink-900/70">
                     We don&rsquo;t currently track a practical, same-journey option for this
                     combination of route, animal and weight. That doesn&rsquo;t mean nobody wants

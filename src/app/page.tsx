@@ -17,31 +17,37 @@ const problems = [
     icon: Car,
     title: "Increased dependence on private cars",
     body: "Pet owners without a car often have no way to reach a vet, a park, or a holiday, forcing costly rideshares or car ownership by necessity.",
+    chip: "bg-brand-500/20 text-brand-200",
   },
   {
     icon: Cross,
     title: "Difficulty accessing veterinary care",
     body: "Specialist and emergency vet care is frequently located far from home, and public transport rules rarely account for a sick or injured animal.",
+    chip: "bg-coral-500/20 text-coral-200",
   },
   {
     icon: MapPinOff,
     title: "Barriers to domestic tourism",
     body: "Families routinely rule out flights and long-distance rail for pet-inclusive holidays, driving instead or not travelling at all.",
+    chip: "bg-ochre-400/20 text-ochre-200",
   },
   {
     icon: MoveRight,
     title: "Complicated interstate relocation",
     body: "Moving a pet interstate can mean a separate freight booking, a specialist agent, and a bill running into hundreds of dollars.",
+    chip: "bg-brand-500/20 text-brand-200",
   },
   {
     icon: Users,
     title: "Reduced mobility for people who don't drive",
     body: "Older Australians, people with disability and car-free households are disproportionately cut off from taking their pet anywhere at all.",
+    chip: "bg-ochre-400/20 text-ochre-200",
   },
   {
     icon: Scale,
     title: "Unnecessary separation of people and companion animals",
     body: "In the least workable cases, people and pets are simply split up for the journey — travelling on different services, or not travelling together at all.",
+    chip: "bg-coral-500/20 text-coral-200",
   },
 ];
 
@@ -49,6 +55,7 @@ export default function HomePage() {
   return (
     <>
       <section className="relative overflow-hidden border-b border-ink-950/[0.06] bg-paper-50">
+        <div className="pointer-events-none absolute inset-0 bg-warm-glow" aria-hidden />
         <div
           className="pointer-events-none absolute inset-0 bg-grid bg-[length:56px_56px] opacity-40"
           aria-hidden
@@ -94,8 +101,8 @@ export default function HomePage() {
                   <span className="font-medium text-ink-900/60">Melbourne → Perth</span>
                   <span className="font-tabular text-ink-900/60">Dog · 12&nbsp;kg</span>
                 </div>
-                <div className="rounded-xl border border-clay-500/25 bg-clay-500/[0.06] p-4">
-                  <p className="text-sm font-semibold text-clay-600">Mobility gap identified</p>
+                <div className="rounded-xl border border-coral-500/25 bg-coral-500/[0.06] p-4">
+                  <p className="text-sm font-semibold text-coral-600">Mobility gap identified</p>
                   <p className="mt-1 text-sm leading-relaxed text-ink-900/65">
                     No airline, train or coach service currently offers a practical,
                     same-journey option for a dog this size on this route.
@@ -161,8 +168,10 @@ export default function HomePage() {
             <div className="grid gap-4 sm:grid-cols-2">
               {problems.map((p) => (
                 <div key={p.title} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-                  <p.icon className="h-5 w-5 text-brand-200" aria-hidden />
-                  <h3 className="mt-3 text-sm font-semibold text-white">{p.title}</h3>
+                  <span className={`flex h-9 w-9 items-center justify-center rounded-full ${p.chip}`}>
+                    <p.icon className="h-4.5 w-4.5" aria-hidden />
+                  </span>
+                  <h3 className="mt-3.5 text-sm font-semibold text-white">{p.title}</h3>
                   <p className="mt-1.5 text-sm leading-relaxed text-white/55">{p.body}</p>
                 </div>
               ))}
@@ -213,8 +222,10 @@ function PathCard({
   body: string;
 }) {
   return (
-    <Link href={href} className="card group flex flex-col gap-3 p-6 transition hover:shadow-pop">
-      <span className="text-xs font-semibold uppercase tracking-[0.12em] text-brand-600">{eyebrow}</span>
+    <Link href={href} className="card group flex flex-col gap-3 p-6 transition hover:-translate-y-0.5 hover:shadow-pop">
+      <span className="w-fit rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.1em] text-brand-700">
+        {eyebrow}
+      </span>
       <h3 className="font-display text-xl font-semibold text-ink-950">{title}</h3>
       <p className="text-sm leading-relaxed text-ink-900/65">{body}</p>
       <span className="mt-auto flex items-center gap-1.5 pt-2 text-sm font-semibold text-ink-950">

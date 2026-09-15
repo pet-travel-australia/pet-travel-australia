@@ -36,7 +36,7 @@ export function SiteFooter() {
       <div className="section grid gap-12 py-16 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
           <Link href="/" className="flex items-center gap-2.5">
-            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 text-brand-200">
+            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-ochre text-white">
               <PawPrint className="h-4.5 w-4.5" aria-hidden />
             </span>
             <span className="font-display text-lg font-semibold text-white">Pet Travel Australia</span>

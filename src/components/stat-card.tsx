@@ -3,8 +3,9 @@ import { formatDate } from "@/lib/format";
 
 export function StatCard({ stat }: { stat: EvidenceStat }) {
   return (
-    <div className="card flex flex-col gap-3 p-6">
-      <span className="font-display text-4xl font-semibold tracking-tight text-ink-950 sm:text-5xl">
+    <div className="card relative flex flex-col gap-3 overflow-hidden p-6">
+      <span className="absolute inset-x-0 top-0 h-1.5 bg-brand-ochre" aria-hidden />
+      <span className="font-display text-4xl font-semibold tracking-tight text-brand-700 sm:text-5xl">
         {stat.value}
       </span>
       <p className="text-sm font-medium leading-snug text-ink-900/75">{stat.label}</p>

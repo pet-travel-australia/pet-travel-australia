@@ -18,8 +18,8 @@ body {
 }
 
 ::selection {
-  background-color: #AEDAC8;
-  color: #0F1B2D;
+  background-color: #93E4BE;
+  color: #0A4132;
 }
 
 .section {
@@ -35,11 +35,11 @@ body {
 }
 
 .btn-primary {
-  @apply inline-flex items-center justify-center gap-2 rounded-full bg-ink-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600;
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand-600 px-6 py-3 text-sm font-semibold text-white shadow-[0_6px_18px_-6px_rgba(10,132,89,0.55)] transition hover:bg-brand-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600;
 }
 
 .btn-secondary {
-  @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink-950/15 bg-white px-6 py-3 text-sm font-semibold text-ink-950 transition hover:border-ink-950/30 hover:bg-paper-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600;
+  @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-ink-950/15 bg-white px-6 py-3 text-sm font-semibold text-ink-950 transition hover:border-brand-500 hover:text-brand-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600;
 }
 
 .btn-ghost {
@@ -71,7 +71,7 @@ body {
 }
 
 .badge-demo {
-  @apply bg-clay-500/10 text-clay-600;
+  @apply bg-coral-100 text-coral-600;
 }
 
 .font-tabular {

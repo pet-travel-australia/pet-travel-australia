@@ -29,7 +29,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-ink-950/[0.07] bg-paper-50/90 backdrop-blur">
       <div className="section flex h-16 items-center justify-between gap-4 sm:h-20">
         <Link href="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-ink-950 text-brand-200">
+          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-ochre text-white">
             <PawPrint className="h-4.5 w-4.5" strokeWidth={2.25} aria-hidden />
           </span>
           <span className="font-display text-lg font-semibold leading-none tracking-tight text-ink-950">

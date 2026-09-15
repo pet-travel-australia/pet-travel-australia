@@ -19,6 +19,16 @@ const icons: Record<PolicyModel["icon"], typeof Box> = {
   flask: FlaskConical,
 };
 
+const chipColors: Record<PolicyModel["icon"], string> = {
+  carrier: "bg-brand-50 text-brand-700",
+  leash: "bg-ochre-50 text-ochre-600",
+  seat: "bg-coral-50 text-coral-600",
+  clock: "bg-brand-50 text-brand-700",
+  shield: "bg-ochre-50 text-ochre-600",
+  receipt: "bg-coral-50 text-coral-600",
+  flask: "bg-brand-50 text-brand-700",
+};
+
 export default function PolicyLabPage() {
   return (
     <div className="section py-12 sm:py-16">
@@ -40,7 +50,7 @@ export default function PolicyLabPage() {
           return (
             <div key={model.id} className="card p-6">
               <div className="flex items-start gap-4">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
+                <span className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${chipColors[model.icon]}`}>
                   <Icon className="h-5 w-5" aria-hidden />
                 </span>
                 <div>
