@@ -1,10 +1,11 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { CheckCircle2, Send } from "lucide-react";
+import { Send } from "lucide-react";
 import { storyCategoryLabels } from "@/data/stories";
 import { StoryCategory } from "@/data/types";
 import { DemoDataNotice } from "@/components/demo-banner";
+import { PawStamp } from "@/components/paw";
 
 const categoryOptions = Object.keys(storyCategoryLabels) as StoryCategory[];
 
@@ -26,8 +27,8 @@ export function SubmitStoryClient() {
   if (submitted) {
     return (
       <div className="section flex flex-col items-center py-24 text-center">
-        <CheckCircle2 className="h-12 w-12 text-brand-600" aria-hidden />
-        <h1 className="mt-5 font-display text-3xl font-semibold text-ink-950">Thank you</h1>
+        <PawStamp />
+        <h1 className="mt-5 font-display text-3xl font-extrabold text-ink-950">Thank you</h1>
         <p className="mt-3 max-w-md text-ink-900/65">
           Your story has been recorded in this prototype session. In a live version of this site,
           it would be queued for review before publishing on the Stories page.
@@ -43,7 +44,7 @@ export function SubmitStoryClient() {
     <div className="section py-12 sm:py-16">
       <div className="max-w-2xl">
         <p className="label-eyebrow">Share your story</p>
-        <h1 className="mt-3 font-display text-3xl font-semibold tracking-tight text-ink-950 sm:text-4xl">
+        <h1 className="mt-3 font-display text-3xl font-extrabold tracking-tight text-ink-950 sm:text-4xl">
           What does pet transport access mean for you?
         </h1>
         <p className="mt-4 text-base leading-relaxed text-ink-900/65">

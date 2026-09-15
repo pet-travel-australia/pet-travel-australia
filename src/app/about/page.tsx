@@ -35,7 +35,7 @@ export default function AboutPage() {
       <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-14">
         <div className="max-w-2xl">
           <p className="label-eyebrow">About</p>
-          <h1 className="mt-3 font-display text-3xl font-semibold tracking-tight text-ink-950 sm:text-4xl">
+          <h1 className="mt-3 font-display text-3xl font-extrabold tracking-tight text-ink-950 sm:text-4xl">
             Responsible access, not unrestricted access
           </h1>
           <p className="mt-4 text-base leading-relaxed text-ink-900/65">
@@ -49,9 +49,12 @@ export default function AboutPage() {
             unmet demand, identify workable solutions, and give transport providers and governments
             the evidence to make change.
           </p>
+          <p className="mt-6 text-xs font-bold uppercase tracking-[0.1em] text-ink-900/40">
+            A project by Pawblication House
+          </p>
         </div>
         <div className="grid grid-cols-2 gap-4">
-          <div className="relative mt-8 aspect-[3/4] overflow-hidden rounded-2xl shadow-card">
+          <div className="relative mt-8 aspect-[3/4] overflow-hidden rounded-[28px] shadow-card">
             <Image
               src="/images/golden-retriever-street.jpg"
               alt="A golden retriever resting on a city footpath"
@@ -60,7 +63,7 @@ export default function AboutPage() {
               className="object-cover"
             />
           </div>
-          <div className="relative aspect-[3/4] overflow-hidden rounded-2xl shadow-card">
+          <div className="relative aspect-[3/4] overflow-hidden rounded-[28px] shadow-card">
             <Image
               src="/images/ginger-cat-canal.jpg"
               alt="A ginger and white cat sitting on a brick walkway beside a canal"
@@ -73,12 +76,18 @@ export default function AboutPage() {
       </div>
 
       <section className="mt-14">
-        <h2 className="font-display text-2xl font-semibold text-ink-950">Our principles</h2>
+        <h2 className="font-display text-2xl font-extrabold text-ink-950">Our principles</h2>
         <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {principles.map((p) => (
+          {principles.map((p, i) => (
             <div key={p.title} className="card p-5">
-              <p.icon className="h-5 w-5 text-brand-600" aria-hidden />
-              <h3 className="mt-3 text-sm font-semibold text-ink-950">{p.title}</h3>
+              <span
+                className={`flex h-10 w-10 items-center justify-center rounded-xl text-white ${
+                  ["bg-brand-600", "bg-coral-500", "bg-jade-600", "bg-ochre-500"][i % 4]
+                }`}
+              >
+                <p.icon className="h-5 w-5" aria-hidden />
+              </span>
+              <h3 className="mt-3 text-sm font-bold text-ink-950">{p.title}</h3>
               <p className="mt-1.5 text-sm leading-relaxed text-ink-900/65">{p.body}</p>
             </div>
           ))}
@@ -87,7 +96,7 @@ export default function AboutPage() {
 
       <section className="card mt-14 grid gap-8 p-8 lg:grid-cols-2">
         <div>
-          <h2 className="font-display text-xl font-semibold text-ink-950">Who this is for</h2>
+          <h2 className="font-display text-xl font-extrabold text-ink-950">Who this is for</h2>
           <ul className="mt-4 space-y-2 text-sm leading-relaxed text-ink-900/70">
             <li>Australian pet owners trying to work out what&rsquo;s actually possible</li>
             <li>Airlines and transport operators assessing the commercial opportunity</li>
@@ -98,7 +107,7 @@ export default function AboutPage() {
           </ul>
         </div>
         <div>
-          <h2 className="font-display text-xl font-semibold text-ink-950">What we are not</h2>
+          <h2 className="font-display text-xl font-extrabold text-ink-950">What we are not</h2>
           <ul className="mt-4 space-y-2 text-sm leading-relaxed text-ink-900/70">
             <li>Not a government body, regulator or airline — an independent platform</li>
             <li>Not a campaign for unrestricted pet access to any transport, anywhere</li>
@@ -108,19 +117,19 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="mt-14 flex flex-col items-start gap-4 rounded-2xl bg-ink-950 p-8 text-white sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          <h2 className="font-display text-xl font-semibold text-white">Get involved</h2>
+      <section className="relative mt-14 flex flex-col items-start gap-4 overflow-hidden rounded-[28px] bg-ink-950 p-8 text-white sm:flex-row sm:items-center sm:justify-between">
+        <div className="relative">
+          <h2 className="font-display text-xl font-extrabold text-white">Get involved</h2>
           <p className="mt-2 max-w-lg text-sm text-white/65">
             Add your journey, share your story, or reach out if you work in transport policy,
             journalism or animal welfare and want to contribute.
           </p>
         </div>
-        <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
-          <Link href="/demand-register" className="btn-primary bg-white text-ink-950 hover:bg-brand-100 hover:text-ink-950">
+        <div className="relative flex shrink-0 flex-col gap-3 sm:flex-row">
+          <Link href="/demand-register" className="btn-primary">
             Add your demand
           </Link>
-          <Link href="/stories/submit" className="btn-secondary border-white/20 bg-transparent text-white hover:bg-white/10">
+          <Link href="/stories/submit" className="btn-outline-white">
             Share your story
           </Link>
         </div>

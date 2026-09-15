@@ -97,7 +97,7 @@ export function CommercialCalculator() {
           <p className="text-xs font-semibold uppercase tracking-[0.12em] text-white/50">
             Estimated potential annual revenue
           </p>
-          <p className="mt-3 font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+          <p className="mt-3 font-display text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
             {formatAUD(totalRevenue)}
           </p>
         </div>

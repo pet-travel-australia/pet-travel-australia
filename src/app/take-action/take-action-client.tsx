@@ -50,7 +50,7 @@ export function TakeActionClient() {
     <div className="section py-12 sm:py-16">
       <div className="max-w-2xl">
         <p className="label-eyebrow">Take Action</p>
-        <h1 className="mt-3 font-display text-3xl font-semibold tracking-tight text-ink-950 sm:text-4xl">
+        <h1 className="mt-3 font-display text-3xl font-extrabold tracking-tight text-ink-950 sm:text-4xl">
           Ask for a trial, not a revolution.
         </h1>
         <p className="mt-4 text-base leading-relaxed text-ink-900/65">
@@ -105,7 +105,7 @@ export function TakeActionClient() {
 
         <div className="card flex flex-col p-6">
           <div className="flex items-center justify-between gap-3">
-            <h2 className="font-display text-lg font-semibold text-ink-950">Your draft message</h2>
+            <h2 className="font-display text-lg font-extrabold text-ink-950">Your draft message</h2>
             <button type="button" onClick={handleCopy} className="btn-secondary !py-2 !px-4 text-xs">
               {copied ? <CopyCheck className="h-3.5 w-3.5" /> : <Copy className="h-3.5 w-3.5" />}
               {copied ? "Copied" : "Copy message"}

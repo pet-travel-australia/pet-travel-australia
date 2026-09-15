@@ -47,15 +47,15 @@ export function JourneyCheckerClient() {
       <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
         <div className="max-w-2xl">
           <p className="label-eyebrow">Journey Checker</p>
-          <h1 className="mt-3 font-display text-3xl font-semibold tracking-tight text-ink-950 sm:text-4xl">
-            Where can you actually go together?
+          <h1 className="mt-3 font-display text-3xl font-extrabold tracking-tight text-ink-950 sm:text-4xl">
+            Can your pet make this trip?
           </h1>
           <p className="mt-4 text-base leading-relaxed text-ink-900/65">
-            Search a route to see every transport option we track, whether pets are permitted,
-            restricted or excluded, and what it would cost and require.
+            Pick a route and we&rsquo;ll show every transport option we track — permitted,
+            restricted or excluded — with cost and conditions.
           </p>
         </div>
-        <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-card">
+        <div className="relative aspect-[4/3] overflow-hidden rounded-[28px] shadow-card">
           <Image
             src="/images/terrier-train-window.jpg"
             alt="A small terrier sitting beside its owner, looking out a train window"
@@ -141,7 +141,7 @@ export function JourneyCheckerClient() {
       {submitted && (
         <div className="mt-10">
           <div className="flex flex-wrap items-baseline justify-between gap-2">
-            <h2 className="font-display text-xl font-semibold text-ink-950">
+            <h2 className="font-display text-xl font-extrabold text-ink-950">
               {originCity?.name ?? origin} → {destinationCity?.name ?? destination}
               <span className="ml-2 font-sans text-sm font-medium text-ink-900/50">
                 {petTypeLabels[petType]} · {weightBandLabels[weightBand]} · {modeLabels[mode]}
@@ -153,19 +153,22 @@ export function JourneyCheckerClient() {
           </div>
 
           {!practical && (
-            <div className="card mt-5 flex flex-col gap-4 border-coral-500/30 bg-coral-500/[0.05] p-6 sm:flex-row sm:items-center sm:justify-between">
+            <div className="mt-5 flex flex-col gap-4 rounded-3xl bg-coral-500 p-6 text-white shadow-card sm:flex-row sm:items-center sm:justify-between">
               <div className="flex gap-3">
-                <TriangleAlert className="h-5 w-5 shrink-0 text-coral-600" aria-hidden />
+                <TriangleAlert className="h-5 w-5 shrink-0" aria-hidden />
                 <div>
-                  <p className="font-display text-lg font-semibold text-coral-600">Mobility gap identified</p>
-                  <p className="mt-1 max-w-xl text-sm leading-relaxed text-ink-900/70">
-                    We don&rsquo;t currently track a practical, same-journey option for this
-                    combination of route, animal and weight. That doesn&rsquo;t mean nobody wants
-                    one — it means the demand isn&rsquo;t visible yet.
+                  <p className="font-display text-lg font-extrabold">Mobility gap identified</p>
+                  <p className="mt-1 max-w-xl text-sm leading-relaxed text-white/80">
+                    No practical, same-journey option for this route, animal and weight yet.
+                    That doesn&rsquo;t mean nobody wants one — it means the demand isn&rsquo;t
+                    visible yet.
                   </p>
                 </div>
               </div>
-              <Link href={registerHref} className="btn-primary shrink-0 whitespace-nowrap">
+              <Link
+                href={registerHref}
+                className="inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full bg-white px-6 py-3 text-sm font-bold text-coral-600 shadow-[0_10px_24px_-8px_rgba(35,24,9,0.3)] transition hover:bg-coral-50"
+              >
                 Register demand for this route
                 <ArrowUpRight className="h-4 w-4" />
               </Link>

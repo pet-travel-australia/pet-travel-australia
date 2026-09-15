@@ -14,7 +14,7 @@ export function JourneyResultCard({ result }: { result: JourneyResult }) {
           <span className="text-xs font-semibold uppercase tracking-[0.1em] text-ink-900/45">
             {modeLabels[option.mode]} · {option.serviceType}
           </span>
-          <h3 className="mt-1 font-display text-xl font-semibold text-ink-950">{option.provider}</h3>
+          <h3 className="mt-1 font-display text-xl font-extrabold text-ink-950">{option.provider}</h3>
         </div>
         <PermissionBadge value={option.petPermitted} />
       </div>

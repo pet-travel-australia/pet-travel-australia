@@ -37,7 +37,7 @@ export function DashboardClient() {
   return (
     <div className="section py-12 sm:py-16">
       <p className="label-eyebrow">Demand Dashboard</p>
-      <h1 className="mt-3 font-display text-3xl font-semibold tracking-tight text-ink-950 sm:text-4xl">
+      <h1 className="mt-3 font-display text-3xl font-extrabold tracking-tight text-ink-950 sm:text-4xl">
         What pet owners are telling us
       </h1>
       <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink-900/65">
@@ -96,9 +96,9 @@ export function DashboardClient() {
 
 function MetricTile({ label, value, highlight }: { label: string; value: string; highlight?: boolean }) {
   return (
-    <div className={`card p-5 ${highlight ? "border-brand-300 bg-brand-50" : ""}`}>
+    <div className={`card p-5 ${highlight ? "border-2 border-brand-300 bg-brand-50" : ""}`}>
       <p className="text-xs font-semibold uppercase tracking-[0.08em] text-ink-900/45">{label}</p>
-      <p className="mt-2 font-display text-2xl font-semibold text-ink-950 sm:text-3xl">{value}</p>
+      <p className="mt-2 font-display text-2xl font-extrabold text-ink-950 sm:text-3xl">{value}</p>
     </div>
   );
 }
@@ -106,7 +106,7 @@ function MetricTile({ label, value, highlight }: { label: string; value: string;
 function ChartCard({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div className="card p-6">
-      <h3 className="font-display text-lg font-semibold text-ink-950">{title}</h3>
+      <h3 className="font-display text-lg font-extrabold text-ink-950">{title}</h3>
       <div className="mt-5">{children}</div>
     </div>
   );

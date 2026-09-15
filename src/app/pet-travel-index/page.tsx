@@ -32,7 +32,7 @@ export default function PetTravelIndexPage() {
     <div className="section py-12 sm:py-16">
       <div className="max-w-2xl">
         <p className="label-eyebrow">Pet Travel Index</p>
-        <h1 className="mt-3 font-display text-3xl font-semibold tracking-tight text-ink-950 sm:text-4xl">
+        <h1 className="mt-3 font-display text-3xl font-extrabold tracking-tight text-ink-950 sm:text-4xl">
           How do Australia&rsquo;s operators and states actually compare?
         </h1>
         <p className="mt-4 text-base leading-relaxed text-ink-900/65">
@@ -56,7 +56,7 @@ export default function PetTravelIndexPage() {
         if (items.length === 0) return null;
         return (
           <section key={group.category} className="mt-12">
-            <h2 className="font-display text-2xl font-semibold text-ink-950">{group.title}</h2>
+            <h2 className="font-display text-2xl font-extrabold text-ink-950">{group.title}</h2>
             <p className="mt-1 text-sm text-ink-900/55">{group.blurb}</p>
             <div className="mt-5 grid gap-5 lg:grid-cols-2">
               {items.map((o, i) => (
@@ -68,7 +68,7 @@ export default function PetTravelIndexPage() {
       })}
 
       <section className="card mt-14 p-8">
-        <h2 className="font-display text-xl font-semibold text-ink-950">
+        <h2 className="font-display text-xl font-extrabold text-ink-950">
           Towards the Australian Pet Travel Index 2027
         </h2>
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-ink-900/70">

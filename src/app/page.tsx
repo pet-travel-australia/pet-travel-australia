@@ -1,255 +1,228 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  ArrowUpRight,
-  Car,
-  Cross,
-  MapPinOff,
-  MoveRight,
-  Plane,
-  Scale,
-  Users,
+  ArrowRight,
+  BarChart3,
+  Building2,
+  MessageSquarePlus,
+  Search,
+  TrendingUp,
+  Ban,
 } from "lucide-react";
-import { heroStats } from "@/data/evidence-stats";
-import { StatCard } from "@/components/stat-card";
-
-const problems = [
-  {
-    icon: Car,
-    title: "Increased dependence on private cars",
-    body: "Pet owners without a car often have no way to reach a vet, a park, or a holiday, forcing costly rideshares or car ownership by necessity.",
-    chip: "bg-brand-500/20 text-brand-200",
-  },
-  {
-    icon: Cross,
-    title: "Difficulty accessing veterinary care",
-    body: "Specialist and emergency vet care is frequently located far from home, and public transport rules rarely account for a sick or injured animal.",
-    chip: "bg-coral-500/20 text-coral-200",
-  },
-  {
-    icon: MapPinOff,
-    title: "Barriers to domestic tourism",
-    body: "Families routinely rule out flights and long-distance rail for pet-inclusive holidays, driving instead or not travelling at all.",
-    chip: "bg-ochre-400/20 text-ochre-200",
-  },
-  {
-    icon: MoveRight,
-    title: "Complicated interstate relocation",
-    body: "Moving a pet interstate can mean a separate freight booking, a specialist agent, and a bill running into hundreds of dollars.",
-    chip: "bg-brand-500/20 text-brand-200",
-  },
-  {
-    icon: Users,
-    title: "Reduced mobility for people who don't drive",
-    body: "Older Australians, people with disability and car-free households are disproportionately cut off from taking their pet anywhere at all.",
-    chip: "bg-ochre-400/20 text-ochre-200",
-  },
-  {
-    icon: Scale,
-    title: "Unnecessary separation of people and companion animals",
-    body: "In the least workable cases, people and pets are simply split up for the journey — travelling on different services, or not travelling together at all.",
-    chip: "bg-coral-500/20 text-coral-200",
-  },
-];
+import { Paw, PawWatermark } from "@/components/paw";
 
 export default function HomePage() {
   return (
     <>
-      <section className="relative overflow-hidden border-b border-ink-950/[0.06] bg-paper-50">
-        <div className="pointer-events-none absolute inset-0 bg-warm-glow" aria-hidden />
-        <div
-          className="pointer-events-none absolute inset-0 bg-grid bg-[length:56px_56px] opacity-40"
-          aria-hidden
-        />
-        <div className="section relative grid gap-12 py-16 sm:py-24 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:py-28">
-          <div>
-            <p className="label-eyebrow">
-              <span className="h-1.5 w-1.5 rounded-full bg-brand-600" />
-              Independent pet transport data platform
-            </p>
-            <h1 className="mt-5 max-w-2xl font-display text-4xl font-semibold leading-[1.08] tracking-tight text-ink-950 sm:text-5xl lg:text-6xl">
-              Where can you travel with your pet in Australia?
+      {/* HERO */}
+      <section className="relative overflow-hidden rounded-b-[36px] bg-teal-jade sm:rounded-b-[56px]">
+        <PawWatermark />
+        <div className="section relative grid gap-10 py-14 sm:py-20 lg:grid-cols-2 lg:items-center lg:gap-14 lg:py-24">
+          <div className="text-white">
+            <h1 className="font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
+              Travel with pets in Australia shouldn&rsquo;t be this hard.
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-900/70">
-              Australia has one of the world&rsquo;s highest rates of pet ownership. Yet whether
-              your pet can travel with you still depends on your postcode, transport mode, animal
-              size and sometimes pure luck.
+            <p className="mt-5 max-w-md text-lg leading-relaxed text-white/80">
+              Pet Travel Australia shows where pet-friendly travel exists, where it doesn&rsquo;t,
+              and where demand is waiting.
             </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/journey-checker" className="btn-primary">
-                Check a journey
-                <ArrowUpRight className="h-4 w-4" />
+                Check a route
+                <ArrowRight className="h-4 w-4" />
               </Link>
-              <Link href="/demand-register" className="btn-secondary">
-                Add your demand
+              <Link href="/demand-register" className="btn-outline-white">
+                Register demand
               </Link>
             </div>
-            <p className="mt-6 font-display text-xl italic text-ink-900/50">
-              &ldquo;Australia moves. Our pets should be able to move with us.&rdquo;
+            <Link
+              href="/pet-travel-index"
+              className="btn-ghost mt-7 text-coral-200 decoration-coral-300 hover:text-white"
+            >
+              Explore the Pet Travel Index
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+          </div>
+
+          <div className="relative aspect-[4/3] overflow-hidden rounded-[28px] shadow-pop lg:aspect-square">
+            <Image
+              src="/images/dogs-on-train.jpg"
+              alt="Two leashed dogs travelling calmly on a metro train with their owners"
+              fill
+              priority
+              sizes="(min-width: 1024px) 45vw, 90vw"
+              className="object-cover object-[center_60%]"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* THREE CORE TOOLS */}
+      <section className="section py-16 sm:py-20">
+        <div className="grid gap-5 lg:grid-cols-3">
+          <ToolCard
+            href="/journey-checker"
+            colorClass="bg-brand-600"
+            icon={Search}
+            title="Journey Checker"
+            body="Can your pet travel this route?"
+          />
+          <ToolCard
+            href="/demand-register"
+            colorClass="bg-coral-500"
+            icon={MessageSquarePlus}
+            title="Demand Register"
+            body="Show where better pet travel options are needed."
+          />
+          <ToolCard
+            href="/pet-travel-index"
+            colorClass="bg-jade-600"
+            icon={BarChart3}
+            title="Pet Travel Index"
+            body="See how pet-friendly Australia's transport options really are."
+          />
+        </div>
+      </section>
+
+      {/* THE GAP */}
+      <section className="relative overflow-hidden bg-brand-900 py-16 text-white sm:py-20">
+        <PawWatermark />
+        <div className="section relative">
+          <h2 className="max-w-2xl font-display text-3xl font-extrabold leading-tight sm:text-4xl">
+            Australia has a pet-mobility gap.
+          </h2>
+          <p className="mt-4 max-w-xl text-lg text-white/75">
+            Many journeys still have no practical public-transport option for people travelling
+            with pets.
+          </p>
+
+          <div className="mt-10 rounded-3xl bg-white/[0.06] p-6 sm:p-8">
+            <p className="text-xs font-bold uppercase tracking-[0.14em] text-coral-200">
+              A route we track
+            </p>
+            <div className="mt-5 flex flex-wrap items-center gap-3 text-lg font-bold sm:text-xl">
+              <span>Melbourne</span>
+              <span className="flex items-center gap-2 text-coral-300">
+                <span className="h-px w-10 bg-coral-400/60 sm:w-16" />
+                <Ban className="h-5 w-5 shrink-0" aria-hidden />
+                <span className="h-px w-10 bg-coral-400/60 sm:w-16" />
+              </span>
+              <span>Perth</span>
+              <span className="ml-1 rounded-full bg-coral-500 px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">
+                No practical option — dog, 10&ndash;20&nbsp;kg
+              </span>
+            </div>
+            <p className="mt-4 text-sm text-white/60">
+              This is one of many gaps the Journey Checker surfaces route by route.
             </p>
           </div>
 
-          <div className="relative">
-            <div className="card overflow-hidden p-0">
-              <div className="flex items-center justify-between border-b border-ink-950/[0.06] bg-ink-950 px-5 py-3.5 text-white">
-                <span className="text-xs font-semibold uppercase tracking-[0.14em] text-white/70">
-                  Journey Checker preview
-                </span>
-                <Plane className="h-4 w-4 text-brand-200" aria-hidden />
-              </div>
-              <div className="space-y-4 p-5">
-                <div className="flex items-center justify-between text-sm">
-                  <span className="font-medium text-ink-900/60">Melbourne → Perth</span>
-                  <span className="font-tabular text-ink-900/60">Dog · 12&nbsp;kg</span>
-                </div>
-                <div className="rounded-xl border border-coral-500/25 bg-coral-500/[0.06] p-4">
-                  <p className="text-sm font-semibold text-coral-600">Mobility gap identified</p>
-                  <p className="mt-1 text-sm leading-relaxed text-ink-900/65">
-                    No airline, train or coach service currently offers a practical,
-                    same-journey option for a dog this size on this route.
-                  </p>
-                </div>
-                <div className="rounded-xl border border-ink-950/[0.07] p-4">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-semibold text-ink-950">Qantas Freight</span>
-                    <span className="badge bg-ochre-100 text-ochre-700">Restricted</span>
-                  </div>
-                  <p className="mt-1 text-xs leading-relaxed text-ink-900/55">
-                    Manifested cargo only — pet travels separately from owner. From $250.
-                  </p>
-                </div>
-                <Link href="/journey-checker" className="btn-ghost">
-                  Run your own journey
-                  <ArrowUpRight className="h-3.5 w-3.5" />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="relative h-[340px] w-full overflow-hidden sm:h-[420px]">
-        <Image
-          src="/images/dogs-on-train.jpg"
-          alt="Two leashed dogs in winter coats standing calmly on a metro train"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-[center_62%]"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink-950/85 via-ink-950/10 to-transparent" />
-        <div className="section absolute inset-x-0 bottom-0 pb-8 sm:pb-10">
-          <p className="max-w-md font-display text-xl italic leading-snug text-white sm:text-2xl">
-            &ldquo;This is what it already looks like, where the rules allow it.&rdquo;
-          </p>
-        </div>
-      </section>
-
-      <section className="section py-16 sm:py-20">
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          <div>
-            <p className="label-eyebrow">The scale of the market</p>
-            <h2 className="mt-3 max-w-lg font-display text-2xl font-semibold tracking-tight text-ink-950 sm:text-3xl">
-              A pet-owning nation, undersupplied by its own transport system
-            </h2>
-          </div>
-          <Link href="/evidence" className="btn-ghost shrink-0">
-            View full sourcing
-            <ArrowUpRight className="h-3.5 w-3.5" />
-          </Link>
-        </div>
-        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {heroStats.map((stat) => (
-            <StatCard key={stat.id} stat={stat} />
-          ))}
-        </div>
-      </section>
-
-      <section className="border-y border-ink-950/[0.06] bg-ink-950 py-16 text-white sm:py-24">
-        <div className="section">
-          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-            <div>
-              <p className="label-eyebrow text-brand-200">The problem</p>
-              <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-                A national country. A fragmented pet transport system.
-              </h2>
-              <p className="mt-5 max-w-md text-base leading-relaxed text-white/65">
-                Rules vary between states, transport operators and airlines — often without clear
-                logic, and rarely with any national consistency. For millions of pet owners, that
-                fragmentation has real consequences.
+          <div className="mt-10 grid gap-5 sm:grid-cols-2">
+            <div className="rounded-3xl bg-white/[0.06] p-6">
+              <p className="font-display text-4xl font-extrabold text-coral-300">73%</p>
+              <p className="mt-1 text-sm text-white/70">
+                of Australian households have a pet
+                <span className="block text-xs text-white/45">Animal Medicines Australia</span>
               </p>
-              <Link href="/pet-travel-index" className="btn-ghost mt-6 text-brand-200 hover:text-brand-100">
-                See how operators and states compare
-                <ArrowUpRight className="h-3.5 w-3.5" />
-              </Link>
             </div>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {problems.map((p) => (
-                <div key={p.title} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-                  <span className={`flex h-9 w-9 items-center justify-center rounded-full ${p.chip}`}>
-                    <p.icon className="h-4.5 w-4.5" aria-hidden />
-                  </span>
-                  <h3 className="mt-3.5 text-sm font-semibold text-white">{p.title}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-white/55">{p.body}</p>
-                </div>
-              ))}
+            <div className="rounded-3xl bg-white/[0.06] p-6">
+              <p className="font-display text-4xl font-extrabold text-coral-300">$21.3B</p>
+              <p className="mt-1 text-sm text-white/70">
+                spent on pets in Australia each year
+                <span className="block text-xs text-white/45">Animal Medicines Australia</span>
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section py-16 sm:py-24">
-        <p className="label-eyebrow">What this platform does</p>
-        <h2 className="mt-3 max-w-2xl font-display text-2xl font-semibold tracking-tight text-ink-950 sm:text-3xl">
-          Make the barriers visible. Quantify unmet demand. Identify workable solutions.
-        </h2>
-        <div className="mt-10 grid gap-5 lg:grid-cols-3">
-          <PathCard
-            href="/journey-checker"
-            eyebrow="For pet owners"
-            title="Check a real journey"
-            body="Search any Australian route by transport mode, pet type and weight to see exactly what's permitted, restricted or unavailable."
-          />
-          <PathCard
-            href="/commercial-case"
-            eyebrow="For operators & policymakers"
-            title="See the commercial case"
-            body="An interactive calculator translating unmet demand into a realistic pet-travel revenue opportunity — assumptions fully editable."
-          />
-          <PathCard
-            href="/pet-travel-index"
-            eyebrow="For journalists & researchers"
-            title="Explore the Pet Travel Index"
-            body="A scorecard ranking operators and states on access, clarity, affordability, welfare and more — the basis for an annual report."
-          />
+      {/* FOR OPERATORS */}
+      <section className="section py-16 sm:py-20">
+        <div className="grid gap-10 rounded-[32px] bg-ochre-50 p-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:p-12">
+          <div>
+            <p className="label-eyebrow text-ochre-600">
+              <Building2 className="h-3.5 w-3.5" />
+              For operators and decision-makers
+            </p>
+            <h2 className="mt-3 font-display text-2xl font-extrabold text-ink-950 sm:text-3xl">
+              Excluding pets has a cost. We can show you what it is.
+            </h2>
+            <Link href="/commercial-case" className="btn-secondary mt-7">
+              Explore operator insights
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-3">
+            <OperatorPoint icon={TrendingUp} text="See unmet demand" />
+            <OperatorPoint icon={Search} text="Identify promising routes" />
+            <OperatorPoint icon={BarChart3} text="Explore the commercial opportunity" />
+          </div>
+        </div>
+      </section>
+
+      {/* FINAL CTA */}
+      <section className="relative mx-6 mb-16 overflow-hidden rounded-[32px] bg-coral-500 py-14 text-center text-white sm:mx-8 sm:py-20 lg:mx-10">
+        <PawWatermark />
+        <div className="relative mx-auto max-w-xl px-6">
+          <Paw size={36} className="mx-auto mb-5 text-white/80" />
+          <h2 className="font-display text-3xl font-extrabold leading-tight sm:text-4xl">
+            Help make pet travel easier in Australia.
+          </h2>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <Link href="/journey-checker" className="btn-outline-white">
+              Check your journey
+            </Link>
+            <Link
+              href="/demand-register"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-bold text-coral-600 shadow-[0_10px_24px_-8px_rgba(35,24,9,0.35)] transition hover:bg-coral-50"
+            >
+              Register unmet demand
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
       </section>
     </>
   );
 }
 
-function PathCard({
+function ToolCard({
   href,
-  eyebrow,
+  colorClass,
+  icon: Icon,
   title,
   body,
 }: {
   href: string;
-  eyebrow: string;
+  colorClass: string;
+  icon: typeof Search;
   title: string;
   body: string;
 }) {
   return (
-    <Link href={href} className="card group flex flex-col gap-3 p-6 transition hover:-translate-y-0.5 hover:shadow-pop">
-      <span className="w-fit rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.1em] text-brand-700">
-        {eyebrow}
+    <Link href={href} className="card group flex flex-col gap-4 p-7 transition hover:-translate-y-1 hover:shadow-pop">
+      <span className={`flex h-14 w-14 items-center justify-center rounded-2xl ${colorClass} text-white`}>
+        <Icon className="h-7 w-7" aria-hidden />
       </span>
-      <h3 className="font-display text-xl font-semibold text-ink-950">{title}</h3>
-      <p className="text-sm leading-relaxed text-ink-900/65">{body}</p>
-      <span className="mt-auto flex items-center gap-1.5 pt-2 text-sm font-semibold text-ink-950">
-        Explore
-        <ArrowUpRight className="h-3.5 w-3.5 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+      <div>
+        <h3 className="font-display text-xl font-extrabold text-ink-950">{title}</h3>
+        <p className="mt-1.5 text-base text-ink-900/70">{body}</p>
+      </div>
+      <span className="mt-auto flex items-center gap-1.5 pt-1 text-sm font-bold text-ink-950">
+        Open
+        <ArrowRight className="h-3.5 w-3.5 transition group-hover:translate-x-1" />
       </span>
     </Link>
+  );
+}
+
+function OperatorPoint({ icon: Icon, text }: { icon: typeof Search; text: string }) {
+  return (
+    <div className="flex flex-col items-start gap-3 rounded-2xl bg-white p-5 shadow-card">
+      <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-ochre-500 text-white">
+        <Icon className="h-5 w-5" aria-hidden />
+      </span>
+      <p className="text-sm font-bold text-ink-950">{text}</p>
+    </div>
   );
 }

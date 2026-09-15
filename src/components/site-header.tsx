@@ -3,8 +3,9 @@
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { Menu, X, PawPrint } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { clsx } from "clsx";
+import { Paw } from "@/components/paw";
 
 const primaryNav = [
   { href: "/journey-checker", label: "Journey Checker" },
@@ -27,13 +28,18 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-ink-950/[0.07] bg-paper-50/90 backdrop-blur">
-      <div className="section flex h-16 items-center justify-between gap-4 sm:h-20">
+      <div className="section flex min-h-16 items-center justify-between gap-4 py-2.5 sm:min-h-20">
         <Link href="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-ochre text-white">
-            <PawPrint className="h-4.5 w-4.5" strokeWidth={2.25} aria-hidden />
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-ochre text-white">
+            <Paw size={20} />
           </span>
-          <span className="font-display text-lg font-semibold leading-none tracking-tight text-ink-950">
-            Pet Travel <span className="text-brand-600">Australia</span>
+          <span className="leading-tight">
+            <span className="block font-display text-lg font-extrabold tracking-tight text-ink-950">
+              Pet Travel <span className="text-brand-600">Australia</span>
+            </span>
+            <span className="hidden text-[10px] font-bold uppercase tracking-[0.1em] text-ink-900/40 sm:block">
+              A project by Pawblication House
+            </span>
           </span>
         </Link>
 
@@ -43,8 +49,8 @@ export function SiteHeader() {
               key={item.href}
               href={item.href}
               className={clsx(
-                "text-sm font-medium text-ink-900/75 transition hover:text-ink-950",
-                pathname === item.href && "text-ink-950 font-semibold"
+                "text-sm font-semibold text-ink-900/70 transition hover:text-ink-950",
+                pathname === item.href && "text-brand-700"
               )}
             >
               {item.label}
@@ -54,18 +60,18 @@ export function SiteHeader() {
 
         <div className="hidden items-center gap-3 xl:flex">
           {secondaryNav.map((item) => (
-            <Link key={item.href} href={item.href} className="text-sm font-medium text-ink-900/60 hover:text-ink-950">
+            <Link key={item.href} href={item.href} className="text-sm font-semibold text-ink-900/55 hover:text-ink-950">
               {item.label}
             </Link>
           ))}
-          <Link href="/demand-register" className="btn-primary">
+          <Link href="/demand-register" className="btn-primary !px-5 !py-2.5">
             Add your demand
           </Link>
         </div>
 
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-ink-950/10 lg:hidden"
+          className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border-2 border-ink-950/10 lg:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-controls="mobile-nav"
@@ -84,8 +90,8 @@ export function SiteHeader() {
                 href={item.href}
                 onClick={() => setOpen(false)}
                 className={clsx(
-                  "rounded-lg px-3 py-2.5 text-sm font-medium text-ink-900/80 hover:bg-ink-950/5",
-                  pathname === item.href && "bg-ink-950/5 font-semibold text-ink-950"
+                  "rounded-lg px-3 py-2.5 text-sm font-semibold text-ink-900/80 hover:bg-ink-950/5",
+                  pathname === item.href && "bg-brand-50 text-brand-700"
                 )}
               >
                 {item.label}

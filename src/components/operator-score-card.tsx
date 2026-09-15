@@ -14,18 +14,18 @@ export function OperatorScoreCard({ operator, rank }: { operator: OperatorScore;
     <div className="card p-6">
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div className="flex items-start gap-4">
-          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-ink-950 font-display text-base font-semibold text-white">
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-ink-950 font-display text-base font-extrabold text-white">
             {rank}
           </span>
           <div>
-            <h3 className="font-display text-lg font-semibold text-ink-950">{operator.name}</h3>
+            <h3 className="font-display text-lg font-extrabold text-ink-950">{operator.name}</h3>
             <p className="text-xs font-medium uppercase tracking-[0.08em] text-ink-900/45">
               {operator.jurisdiction} · {operator.category === "airline" ? "Airline" : operator.category === "state" ? "State network" : "Operator"}
             </p>
           </div>
         </div>
         <div className="text-right">
-          <p className="font-display text-3xl font-semibold text-ink-950">{overall.toFixed(1)}</p>
+          <p className="font-display text-3xl font-extrabold text-ink-950">{overall.toFixed(1)}</p>
           <p className="text-xs text-ink-900/45">out of 10</p>
         </div>
       </div>

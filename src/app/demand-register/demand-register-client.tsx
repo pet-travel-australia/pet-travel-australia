@@ -2,12 +2,13 @@
 
 import { FormEvent, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { CheckCircle2, Send } from "lucide-react";
+import { Send } from "lucide-react";
 import { cities } from "@/data/cities";
 import { AustralianState, DemandSubmission, PetType, TransportMode, WeightBand } from "@/data/types";
 import { getDemandStore } from "@/lib/demand-store";
 import { frequencyLabels, modeLabels, petTypeLabels, weightBandLabels } from "@/lib/format";
 import { DemoDataNotice } from "@/components/demo-banner";
+import { PawStamp } from "@/components/paw";
 
 const petTypeOptions: PetType[] = ["dog", "cat", "small-pet", "other"];
 const weightBandOptions: WeightBand[] = ["under-5kg", "5-10kg", "10-20kg", "20-40kg", "over-40kg"];
@@ -73,8 +74,8 @@ export function DemandRegisterClient() {
   if (status === "done") {
     return (
       <div className="section flex flex-col items-center py-24 text-center">
-        <CheckCircle2 className="h-12 w-12 text-brand-600" aria-hidden />
-        <h1 className="mt-5 font-display text-3xl font-semibold text-ink-950">Demand registered</h1>
+        <PawStamp />
+        <h1 className="mt-5 font-display text-3xl font-extrabold text-ink-950">Demand registered</h1>
         <p className="mt-3 max-w-md text-ink-900/65">
           Thank you. Your route has been added to our aggregate demand data, which feeds the{" "}
           <a href="/dashboard" className="font-semibold text-brand-700 underline underline-offset-2">
@@ -93,7 +94,7 @@ export function DemandRegisterClient() {
     <div className="section py-12 sm:py-16">
       <div className="max-w-2xl">
         <p className="label-eyebrow">Demand Register</p>
-        <h1 className="mt-3 font-display text-3xl font-semibold tracking-tight text-ink-950 sm:text-4xl">
+        <h1 className="mt-3 font-display text-3xl font-extrabold tracking-tight text-ink-950 sm:text-4xl">
           Tell us where you&rsquo;d travel, if you could.
         </h1>
         <p className="mt-4 text-base leading-relaxed text-ink-900/65">
@@ -110,7 +111,7 @@ export function DemandRegisterClient() {
 
       <form onSubmit={handleSubmit} className="card mt-8 max-w-2xl space-y-8 p-6 sm:p-8">
         <fieldset className="space-y-4">
-          <legend className="font-display text-lg font-semibold text-ink-950">Your journey</legend>
+          <legend className="font-display text-lg font-extrabold text-ink-950">Your journey</legend>
           <div className="grid gap-4 sm:grid-cols-2">
             <Field label="Origin">
               <select className="select-field" value={origin} onChange={(e) => setOrigin(e.target.value)}>
@@ -182,7 +183,7 @@ export function DemandRegisterClient() {
         </fieldset>
 
         <fieldset className="space-y-4">
-          <legend className="font-display text-lg font-semibold text-ink-950">What you&rsquo;d pay and expect</legend>
+          <legend className="font-display text-lg font-extrabold text-ink-950">What you&rsquo;d pay and expect</legend>
           <Field label={`What would you reasonably pay per journey? ${willingnessToPayAUD === 0 ? "(Free)" : `($${willingnessToPayAUD})`}`}>
             <input
               type="range"
@@ -231,7 +232,7 @@ export function DemandRegisterClient() {
         </fieldset>
 
         <fieldset className="space-y-4">
-          <legend className="font-display text-lg font-semibold text-ink-950">Optional details</legend>
+          <legend className="font-display text-lg font-extrabold text-ink-950">Optional details</legend>
           <div className="grid gap-4 sm:grid-cols-2">
             <Field label="State">
               <select className="select-field" value={state} onChange={(e) => setState(e.target.value as AustralianState)}>

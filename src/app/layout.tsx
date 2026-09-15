@@ -1,26 +1,13 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 
-const display = Fraunces({
-  subsets: ["latin"],
-  variable: "--font-display",
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
-  display: "swap",
-});
-
-const sans = Inter({
+const manrope = Manrope({
   subsets: ["latin"],
   variable: "--font-sans",
-  display: "swap",
-});
-
-const mono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -33,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s | Pet Travel Australia",
   },
   description:
-    "Pet Travel Australia is an independent civic-tech and consumer-data platform quantifying unmet demand for pet-inclusive transport and giving operators and governments evidence for practical, responsible change.",
+    "See where pet-friendly travel exists in Australia, where it doesn't, and where demand is waiting. Journey Checker, Demand Register and Pet Travel Index — evidence for pet owners, operators and policymakers.",
   keywords: [
     "pet travel Australia",
     "pet friendly transport",
@@ -67,7 +54,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en-AU" className={`${display.variable} ${sans.variable} ${mono.variable}`}>
+    <html lang="en-AU" className={manrope.variable}>
       <body className="flex min-h-screen flex-col font-sans antialiased">
         <a
           href="#main-content"

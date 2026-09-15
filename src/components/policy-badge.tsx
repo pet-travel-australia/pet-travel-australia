@@ -13,9 +13,9 @@ export function PolicyBadge({ status, className }: { status: PolicyStatus; class
 }
 
 const permissionConfig: Record<string, { label: string; className: string }> = {
-  yes: { label: "Pet permitted", className: "bg-brand-100 text-brand-800" },
-  restricted: { label: "Restricted", className: "bg-ochre-100 text-ochre-700" },
-  no: { label: "Not permitted", className: "bg-clay-500/10 text-clay-600" },
+  yes: { label: "Pet permitted", className: "bg-jade-600 text-white" },
+  restricted: { label: "Restricted", className: "bg-ochre-500 text-white" },
+  no: { label: "Not permitted", className: "bg-clay-500 text-white" },
 };
 
 export function PermissionBadge({ value, className }: { value: string; className?: string }) {

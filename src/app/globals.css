@@ -3,9 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --font-display: "Fraunces", ui-serif, Georgia, serif;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 html {
@@ -13,67 +12,77 @@ html {
 }
 
 body {
-  background-color: #FAF9F6;
-  color: #0F1B2D;
+  background-color: #FBF3E3;
+  color: #231809;
 }
 
 ::selection {
-  background-color: #93E4BE;
-  color: #0A4132;
+  background-color: #8FD1C9;
+  color: #093330;
 }
 
-.section {
-  @apply mx-auto max-w-content px-6 sm:px-8 lg:px-10;
-}
+@layer components {
+  .section {
+    @apply mx-auto max-w-content px-6 sm:px-8 lg:px-10;
+  }
 
-.label-eyebrow {
-  @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-brand-700;
-}
+  .label-eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-brand-700;
+  }
 
-.card {
-  @apply rounded-2xl border border-ink-950/[0.07] bg-white shadow-card;
-}
+  .card {
+    @apply rounded-3xl bg-white shadow-card;
+  }
 
-.btn-primary {
-  @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand-600 px-6 py-3 text-sm font-semibold text-white shadow-[0_6px_18px_-6px_rgba(10,132,89,0.55)] transition hover:bg-brand-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600;
-}
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-coral-500 px-7 py-3.5 text-sm font-bold text-white shadow-[0_10px_24px_-8px_rgba(221,76,34,0.55)] transition hover:bg-coral-600 hover:shadow-[0_12px_28px_-8px_rgba(221,76,34,0.6)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-coral-600;
+  }
 
-.btn-secondary {
-  @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-ink-950/15 bg-white px-6 py-3 text-sm font-semibold text-ink-950 transition hover:border-brand-500 hover:text-brand-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600;
-}
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand-600 px-7 py-3.5 text-sm font-bold text-white shadow-[0_10px_24px_-8px_rgba(15,99,93,0.5)] transition hover:bg-brand-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-700;
+  }
 
-.btn-ghost {
-  @apply inline-flex items-center justify-center gap-1.5 text-sm font-semibold text-brand-700 underline decoration-brand-300 decoration-2 underline-offset-4 transition hover:text-brand-800;
-}
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-ink-950/15 bg-white px-7 py-3.5 text-sm font-bold text-ink-950 transition hover:border-brand-500 hover:text-brand-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600;
+  }
 
-.input-field {
-  @apply w-full rounded-xl border border-ink-950/15 bg-white px-4 py-3 text-sm text-ink-950 placeholder:text-ink-950/35 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20;
-}
+  .btn-outline-white {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/50 bg-white/10 px-7 py-3.5 text-sm font-bold text-white backdrop-blur transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
+  }
 
-.select-field {
-  @apply w-full appearance-none rounded-xl border border-ink-950/15 bg-white px-4 py-3 text-sm text-ink-950 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20;
-}
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-1.5 text-sm font-bold text-brand-700 underline decoration-coral-400 decoration-2 underline-offset-4 transition hover:text-brand-800;
+  }
 
-.badge {
-  @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold;
-}
+  .input-field {
+    @apply w-full rounded-xl border-2 border-ink-950/10 bg-white px-4 py-3 text-sm text-ink-950 placeholder:text-ink-950/35 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20;
+  }
 
-.badge-verified {
-  @apply bg-brand-100 text-brand-800;
-}
+  .select-field {
+    @apply w-full appearance-none rounded-xl border-2 border-ink-950/10 bg-white px-4 py-3 text-sm text-ink-950 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20;
+  }
 
-.badge-proposal {
-  @apply bg-ochre-100 text-ochre-700;
-}
+  .badge {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold;
+  }
 
-.badge-international {
-  @apply bg-ink-950/[0.06] text-ink-900;
-}
+  .badge-verified {
+    @apply bg-jade-600 text-white;
+  }
 
-.badge-demo {
-  @apply bg-coral-100 text-coral-600;
-}
+  .badge-proposal {
+    @apply bg-ochre-500 text-white;
+  }
 
-.font-tabular {
-  font-variant-numeric: tabular-nums;
+  .badge-international {
+    @apply bg-ink-800 text-white;
+  }
+
+  .badge-demo {
+    @apply bg-coral-500 text-white;
+  }
+
+  .font-tabular {
+    font-variant-numeric: tabular-nums;
+  }
 }

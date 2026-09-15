@@ -19,7 +19,7 @@ export function StoriesClient() {
       <div className="flex flex-wrap items-end justify-between gap-6">
         <div className="max-w-2xl">
           <p className="label-eyebrow">Stories</p>
-          <h1 className="mt-3 font-display text-3xl font-semibold tracking-tight text-ink-950 sm:text-4xl">
+          <h1 className="mt-3 font-display text-3xl font-extrabold tracking-tight text-ink-950 sm:text-4xl">
             What does pet transport access mean for you?
           </h1>
           <p className="mt-4 text-base leading-relaxed text-ink-900/65">
@@ -82,7 +82,7 @@ export function StoriesClient() {
         {visible.map((story) => (
           <article key={story.id} className="card p-6">
             <span className="badge badge-demo">Illustrative placeholder</span>
-            <h2 className="mt-3 font-display text-lg font-semibold leading-snug text-ink-950">{story.title}</h2>
+            <h2 className="mt-3 font-display text-lg font-extrabold leading-snug text-ink-950">{story.title}</h2>
             <p className="mt-3 text-sm leading-relaxed text-ink-900/70">{story.body}</p>
             <p className="mt-4 text-xs font-medium text-ink-900/45">
               {story.name} · {story.location} · {storyCategoryLabels[story.category]}

@@ -24,7 +24,7 @@ export default function CommercialCasePage() {
       <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
         <div className="max-w-2xl">
           <p className="label-eyebrow">Commercial Case</p>
-          <h1 className="mt-3 font-display text-3xl font-semibold tracking-tight text-ink-950 sm:text-4xl">
+          <h1 className="mt-3 font-display text-3xl font-extrabold tracking-tight text-ink-950 sm:text-4xl">
             The opportunity operators are leaving on the table
           </h1>
           <p className="mt-4 text-base leading-relaxed text-ink-900/65">
@@ -59,7 +59,7 @@ export default function CommercialCasePage() {
             <TrendingUp className="h-3.5 w-3.5" />
             Where the data comes from
           </p>
-          <h2 className="mt-3 font-display text-2xl font-semibold text-ink-950">
+          <h2 className="mt-3 font-display text-2xl font-extrabold text-ink-950">
             Aggregate, anonymised demand data
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-ink-900/70">
@@ -76,7 +76,7 @@ export default function CommercialCasePage() {
           </ul>
         </div>
         <div className="card p-6">
-          <h3 className="font-display text-lg font-semibold text-ink-950">What we won&rsquo;t do</h3>
+          <h3 className="font-display text-lg font-extrabold text-ink-950">What we won&rsquo;t do</h3>
           <ul className="mt-4 space-y-3 text-sm leading-relaxed text-ink-900/70">
             <li className="flex gap-2">
               <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-ink-900/35" />

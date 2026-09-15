@@ -95,7 +95,7 @@ export function DonutStat({
         />
       </svg>
       <div>
-        <p className="font-display text-3xl font-semibold text-ink-950">{percent}%</p>
+        <p className="font-display text-3xl font-extrabold text-ink-950">{percent}%</p>
         <p className="max-w-[12rem] text-sm text-ink-900/60">{label}</p>
       </div>
     </div>

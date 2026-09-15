@@ -32,7 +32,7 @@ export function EvidenceClient() {
     <div className="section py-12 sm:py-16">
       <div className="max-w-2xl">
         <p className="label-eyebrow">Evidence &amp; Sources</p>
-        <h1 className="mt-3 font-display text-3xl font-semibold tracking-tight text-ink-950 sm:text-4xl">
+        <h1 className="mt-3 font-display text-3xl font-extrabold tracking-tight text-ink-950 sm:text-4xl">
           Every claim on this site should be checkable
         </h1>
         <p className="mt-4 text-base leading-relaxed text-ink-900/65">
@@ -111,7 +111,7 @@ export function EvidenceClient() {
       </div>
 
       <div className="card mt-10 p-8">
-        <h2 className="font-display text-lg font-semibold text-ink-950">How this library stays current</h2>
+        <h2 className="font-display text-lg font-extrabold text-ink-950">How this library stays current</h2>
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-ink-900/70">
           Every entry carries a source organisation, a source URL, a date checked, a jurisdiction
           and a policy type. That structure — rather than free-text claims — is what makes ongoing
